@@ -1,0 +1,40 @@
+<div class="container mt-4">
+    <h2>Voter Election Candidates</h2>
+    <form (ngSubmit)="createVoterElectionCandidate()" class="mb-3">
+      <div class="form-group">
+        <label for="electionId">Election ID:</label>
+        <input type="number" class="form-control" [(ngModel)]="voterElectionCandidate.electionId" name="electionId" required />
+      </div>
+      <div class="form-group">
+        <label for="voterId">Voter ID:</label>
+        <input type="number" class="form-control" [(ngModel)]="voterElectionCandidate.voterId" name="voterId" required />
+      </div>
+      <div class="form-group">
+        <label for="candidateElectionId">Candidate Election ID:</label>
+        <input type="number" class="form-control" [(ngModel)]="voterElectionCandidate.candidateElectionId" name="candidateElectionId" required />
+      </div>
+      <button type="submit" class="btn btn-primary mt-2">Add Voter Election Candidate</button>
+    </form>
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Election ID</th>
+          <th>Voter ID</th>
+          <th>Candidate Election ID</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let voterElectionCandidate of voterElectionCandidates">
+          <td>{{ voterElectionCandidate.electionId }}</td>
+          <td>{{ voterElectionCandidate.voterId }}</td>
+          <td>{{ voterElectionCandidate.candidateElectionId }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deleteVoterElectionCandidate(voterElectionCandidate.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

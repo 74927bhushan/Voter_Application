@@ -1,0 +1,34 @@
+<div class="container mt-4">
+    <h2>Candidate Elections</h2>
+    <form (ngSubmit)="createCandidateElection()" class="mb-3">
+      <div class="form-group">
+        <label for="candidateId">Candidate ID:</label>
+        <input type="number" class="form-control" [(ngModel)]="candidateElection.candidateId" name="candidateId" required />
+      </div>
+      <div class="form-group">
+        <label for="electionId">Election ID:</label>
+        <input type="number" class="form-control" [(ngModel)]="candidateElection.electionId" name="electionId" required />
+      </div>
+      <button type="submit" class="btn btn-primary mt-2">Add Candidate Election</button>
+    </form>
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Candidate ID</th>
+          <th>Election ID</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let candidateElection of candidateElections">
+          <td>{{ candidateElection.candidateId }}</td>
+          <td>{{ candidateElection.electionId }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deleteCandidateElection(candidateElection.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

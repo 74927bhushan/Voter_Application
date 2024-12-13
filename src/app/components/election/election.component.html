@@ -1,0 +1,32 @@
+<div class="container mt-4">
+    <h2>Elections</h2>
+    <form (ngSubmit)="createElection()" class="mb-3">
+      <div class="form-group">
+        <label for="electionType">Election Type:</label>
+        <select class="form-control" [(ngModel)]="election.electionType" name="electionType" required>
+          <option value="Parliament">Parliament</option>
+          <option value="Assembly">Assembly</option>
+          <option value="Panchayat">Panchayat</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary mt-2">Add Election</button>
+    </form>
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Election Type</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let election of elections">
+          <td>{{ election.electionType }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deleteElection(election.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

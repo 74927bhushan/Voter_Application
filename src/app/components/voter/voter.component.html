@@ -1,0 +1,50 @@
+<div class="container mt-4">
+    <h2>Voters</h2>
+    <form (ngSubmit)="createVoter()" class="mb-3">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" [(ngModel)]="voter.name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" class="form-control" [(ngModel)]="voter.dob" name="dob" required />
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select class="form-control" [(ngModel)]="voter.gender" name="gender" required>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea class="form-control" [(ngModel)]="voter.address" name="address" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary mt-2">Add Voter</button>
+    </form>
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Date of Birth</th>
+          <th>Gender</th>
+          <th>Address</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let voter of voters">
+          <td>{{ voter.name }}</td>
+          <td>{{ voter.dob }}</td>
+          <td>{{ voter.gender }}</td>
+          <td>{{ voter.address }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deleteVoter(voter.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

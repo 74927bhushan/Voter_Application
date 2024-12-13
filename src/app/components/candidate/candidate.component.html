@@ -1,0 +1,56 @@
+<div class="container mt-4">
+    <h2>Candidates</h2>
+    <form (ngSubmit)="createCandidate()" class="mb-3">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" [(ngModel)]="candidate.name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" class="form-control" [(ngModel)]="candidate.dob" name="dob" required />
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select class="form-control" [(ngModel)]="candidate.gender" name="gender" required>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea class="form-control" [(ngModel)]="candidate.address" name="address" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="party">Party:</label>
+        <input type="text" class="form-control" [(ngModel)]="candidate.party" name="party" required />
+      </div>
+      <button type="submit" class="btn btn-primary mt-2">Add Candidate</button>
+    </form>
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Date of Birth</th>
+          <th>Gender</th>
+          <th>Address</th>
+          <th>Party</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let candidate of candidates">
+          <td>{{ candidate.name }}</td>
+          <td>{{ candidate.dob }}</td>
+          <td>{{ candidate.gender }}</td>
+          <td>{{ candidate.address }}</td>
+          <td>{{ candidate.party }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deleteCandidate(candidate.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
