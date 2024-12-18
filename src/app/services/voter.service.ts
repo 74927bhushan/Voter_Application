@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class VoterService {
   private apiUrl = 'http://localhost:8080/api/voters';
@@ -11,7 +11,7 @@ export class VoterService {
   constructor(private http: HttpClient) {}
 
   getAllVoters(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+    return this.http.get<any[]>(`${this.apiUrl}/voters`);
   }
 
   getVoterById(id: number): Observable<any> {
@@ -19,7 +19,7 @@ export class VoterService {
   }
 
   createVoter(voter: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, voter);
+    return this.http.post<any>(`${this.apiUrl}`, voter); // Changed endpoint
   }
 
   updateVoter(id: number, voter: any): Observable<any> {

@@ -1,50 +1,95 @@
-<div class="container mt-4">
-    <h2>Voters</h2>
-    <form (ngSubmit)="createVoter()" class="mb-3">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" class="form-control" [(ngModel)]="voter.name" name="name" required />
-      </div>
-      <div class="form-group">
-        <label for="dob">Date of Birth:</label>
-        <input type="date" class="form-control" [(ngModel)]="voter.dob" name="dob" required />
-      </div>
-      <div class="form-group">
-        <label for="gender">Gender:</label>
-        <select class="form-control" [(ngModel)]="voter.gender" name="gender" required>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="address">Address:</label>
-        <textarea class="form-control" [(ngModel)]="voter.address" name="address" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary mt-2">Add Voter</button>
-    </form>
-  
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Date of Birth</th>
-          <th>Gender</th>
-          <th>Address</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let voter of voters">
-          <td>{{ voter.name }}</td>
-          <td>{{ voter.dob }}</td>
-          <td>{{ voter.gender }}</td>
-          <td>{{ voter.address }}</td>
-          <td>
-            <button class="btn btn-danger btn-sm" (click)="deleteVoter(voter.id)">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/home">
+      <i class="fas fa-vote-yea"></i> Votex
+    </a>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/faq">FAQ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login">Logout</a>
+      </li>
+    </ul>
   </div>
-  
+</nav>
+<div class="container mt-4">
+  <div class="row">
+    <!-- Voter Form -->
+    <div class="col-md-4">
+      <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+          <h5>{{ voter.id ? 'Edit Voter' : 'Add Voter' }}</h5>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="voter.id ? saveUpdatedVoter() : createVoter()">
+            <div class="form-group mb-3">
+              <label>Name</label>
+              <input type="text" class="form-control" [(ngModel)]="voter.name" name="name" required />
+            </div>
+
+            <div class="form-group mb-3">
+              <label>Date of Birth</label>
+              <input type="date" class="form-control" [(ngModel)]="voter.dob" name="dob" required />
+            </div>
+
+            <div class="form-group mb-3">
+              <label>Gender</label>
+              <select class="form-control" [(ngModel)]="voter.gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group mb-3">
+              <label>Address</label>
+              <textarea class="form-control" [(ngModel)]="voter.address" name="address" required></textarea>
+            </div>
+
+            <button class="btn btn-primary w-100">{{ voter.id ? 'Update' : 'Add' }}</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Voter List -->
+    <div class="col-md-8">
+      <div class="card shadow">
+        <div class="card-header bg-success text-white">
+          <h5>Voter List</h5>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4" *ngFor="let voter of voters">
+              <div class="card mb-3 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">{{ voter.name }}</h5>
+                  <p class="card-text">
+                    <strong>DOB:</strong> {{ voter.dob }}<br />
+                    <strong>Gender:</strong> {{ voter.gender }}<br />
+                    <strong>Address:</strong> {{ voter.address }}
+                  </p>
+                  <div class="d-flex justify-content-between">
+                    <button class="btn btn-sm btn-warning" (click)="updateVoter(voter.id)">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-sm btn-danger" (click)="deleteVoter(voter.id)">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3 fixed-bottom">
+  <p class="mb-0">&copy; 2024 Votex | All Rights Reserved</p>
+</footer>

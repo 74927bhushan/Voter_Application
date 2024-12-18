@@ -30,6 +30,8 @@ export class ElectionComponent {
     });
   }
 
+  
+
   deleteElection(id: number) {
     this.electionService.deleteElection(id).subscribe(() => this.fetchElections());
   }

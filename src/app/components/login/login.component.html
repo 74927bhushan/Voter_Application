@@ -1,0 +1,68 @@
+<div class="vh-100" style="background-color: #eee;">
+  <!-- Login Container -->
+  <div class="container h-100 d-flex align-items-center justify-content-center">
+    <div class="card text-black shadow-lg" style="border-radius: 25px; max-width: 900px; width: 100%;">
+      <div class="row g-0">
+        <!-- Image Section -->
+        <div class="col-md-6 d-none d-md-block">
+          <img 
+            src="https://www.bing.com/th/id/OGC.bca6645a933473a376a009a6073ba9ee?pid=1.7&rurl=https%3a%2f%2fwww.techmeet360.com%2fwp-content%2fuploads%2f2022%2f08%2flogin-animate.gif&ehk=OTE0ms%2bx%2fyL9j7Y3qWyGduSo%2bk%2byuSSQUSo1jtdf8pM%3d"
+            alt="Sample image"
+            class="img-fluid"
+            style="border-radius: 25px 0 0 25px; height: 100%; object-fit: cover;"
+          />
+        </div>
+
+        <!-- Form Section -->
+        <div class="col-md-6 d-flex align-items-center">
+          <div class="card-body p-4">
+            <h3 class="text-center fw-bold mb-4">Login</h3>
+            <form (ngSubmit)="loginUser()">
+              <!-- Email -->
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email"
+                  [(ngModel)]="loginData.email"
+                  name="email"
+                  required
+                />
+              </div>
+
+              <!-- Password -->
+              <div class="mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Password"
+                  [(ngModel)]="loginData.password"
+                  name="password"
+                  required
+                />
+              </div>
+
+              <!-- Checkbox -->
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="rememberMe" />
+                <label class="form-check-label" for="rememberMe">
+                  Remember Me
+                </label>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Login</button>
+              </div>
+
+              <p class="text-center mt-4">
+                Don't have an account? 
+                <a routerLink="/register" class="text-decoration-none text-primary fw-bold">Register here</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

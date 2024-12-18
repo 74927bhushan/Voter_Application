@@ -1,0 +1,9 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-image: url('https://electionbuddy.com/wp-content/uploads/2023/06/What-Is-the-Definition-of-%E2%80%98Election-Cybersecurity.jpeg');
+    background-size: cover;
+    background-position: center;
+  }
+  

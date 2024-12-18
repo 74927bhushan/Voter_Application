@@ -1,3 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/home">
+      <i class="fas fa-vote-yea"></i> Votex
+    </a>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/faq">FAQ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contact-us">Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 <div class="container mt-4">
     <h2>Candidate Elections</h2>
     <form (ngSubmit)="createCandidateElection()" class="mb-3">

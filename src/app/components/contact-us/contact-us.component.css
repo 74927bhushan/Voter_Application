@@ -1,0 +1,24 @@
+.contact-container {
+    font-family: Arial, sans-serif;
+  }
+  
+  .contact-container a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .contact-container a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+  }
+  
+  .card {
+    border: none;
+    border-radius: 10px;
+  }
+  
+  footer {
+    font-size: 14px;
+    
+  }
+  

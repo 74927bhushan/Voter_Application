@@ -1,0 +1,201 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #343a40;
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.navbar-nav .nav-item .nav-link {
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  background-color: #495057;
+  border-radius: 5px;
+}
+
+/* Hero Section Styles */
+.container.mt-4 {
+  margin-top: 4rem;
+}
+
+.display-4 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.lead {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-section .btn {
+  font-size: 1.1rem;
+  padding: 0.8rem 2rem;
+  background-color: #007bff;
+  border: none;
+  border-radius: 0.3rem;
+  color: #fff;
+}
+
+.hero-section .btn:hover {
+  background-color: #0056b3;
+  transition: 0.3s;
+}
+
+.carousel-item img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #007bff;
+}
+
+/* Services Section Styles */
+.container.mt-5 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+h2.text-center.mb-4 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.services-section .row {
+  display: flex;
+  justify-content: center;
+}
+
+.services-section .col-md-4 {
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.services-section .col-md-4 a {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.services-section .col-md-4 a:hover {
+  transform: scale(1.05);
+}
+
+.services-section .col-md-4 i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.services-section .col-md-4 h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.services-section .col-md-4 p {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+/* Footer Section Styles */
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 3rem 0;
+}
+
+footer h5 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+footer ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+footer ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+footer hr {
+  border-color: #495057;
+}
+
+footer .text-center {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+  .navbar-nav .nav-item .nav-link {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .display-4 {
+    font-size: 2.5rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .carousel-item img {
+    height: 300px;
+  }
+
+  .services-section h2 {
+    font-size: 2rem;
+  }
+
+  .services-section .col-md-4 {
+    margin-bottom: 1rem;
+    flex: 0 0 100%;
+  }
+
+  .services-section .col-md-4 i {
+    font-size: 2.5rem;
+  }
+
+  .services-section .col-md-4 h4 {
+    font-size: 1.3rem;
+  }
+}

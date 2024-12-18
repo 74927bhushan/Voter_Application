@@ -1,0 +1,147 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/home">
+      <i class="fas fa-vote-yea"></i> Votex
+    </a>
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/faq">FAQ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contact-us">Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section with Carousel -->
+<div class="container mt-4">
+  <div class="row align-items-center">
+    <!-- Left Section -->
+    <div class="col-md-6">
+      <h1 class="display-4">Welcome to Votex</h1>
+      <p class="lead">
+        Empowering elections, one vote at a time. With seamless voter and candidate management,
+        we aim to make elections transparent and efficient for everyone.
+      </p>
+      <p>
+        Explore our features to simplify election management and make the process secure
+        and hassle-free.
+      </p>
+      <a routerLink="/elections" class="btn btn-primary">Explore Elections</a>
+    </div>
+
+    <!-- Carousel Section -->
+    <div class="col-md-6">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="https://techkalture.com/wp-content/uploads/2020/11/Electronic-Voting-Software.jpg"
+              class="d-block w-100"
+              alt="Election Management"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://t4.ftcdn.net/jpg/04/83/32/57/360_F_483325706_Yy9uS1qzLVKPeNZvefGfJnhscRDb6VW8.jpg"
+              class="d-block w-100"
+              alt="Candidate Management"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://media.istockphoto.com/id/1271196480/photo/vote-button.jpg?s=612x612&w=0&k=20&c=yTm0Rxk_aybq5XF-o3cA3kIlvCkd6pl2NvKrJSCIJwM="
+              class="d-block w-100"
+              alt="Voter Management"
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Services Section -->
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Our Services</h2>
+  <div class="row text-center">
+    <div class="col-md-4">
+      <a routerLink="/voters" class="text-decoration-none text-dark">
+        <i class="fas fa-user-friends fa-3x mb-3 text-primary"></i>
+        <h4>Voter Management</h4>
+        <p>Manage voters efficiently and securely with our advanced tools.</p>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a routerLink="/elections" class="text-decoration-none text-dark">
+        <i class="fas fa-calendar-alt fa-3x mb-3 text-success"></i>
+        <h4>Election Management</h4>
+        <p>Organize and oversee elections seamlessly with our user-friendly interface.</p>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a routerLink="/candidates" class="text-decoration-none text-dark">
+        <i class="fas fa-user-tie fa-3x mb-3 text-danger"></i>
+        <h4>Candidate Management</h4>
+        <p>Track candidate performance and manage data effortlessly.</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="bg-dark text-white mt-auto pt-4 pb-2">
+  <div class="container">
+    <div class="row">
+      <!-- Column 1 -->
+      <div class="col-md-4">
+        <h5>About Votex</h5>
+        <p>
+          Votex is a leading platform for transparent, secure, and seamless election management.
+        </p>
+      </div>
+      <!-- Column 2 -->
+      <div class="col-md-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a routerLink="/team" class="text-white text-decoration-none">Team</a></li>
+          <li><a routerLink="/contact" class="text-white text-decoration-none">Contact</a></li>
+          <li><a routerLink="/careers" class="text-white text-decoration-none">Careers</a></li>
+        </ul>
+      </div>
+      <!-- Column 3 -->
+      <div class="col-md-4">
+        <h5>Support</h5>
+        <ul class="list-unstyled">
+          <li><a routerLink="/faq" class="text-white text-decoration-none">FAQs</a></li>
+          <li><a routerLink="/help" class="text-white text-decoration-none">Help Center</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="bg-light" />
+    <div class="text-center">
+      <p>&copy; 2024 Votex. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
